@@ -19,18 +19,22 @@ def not_blank(question, error_msg, ):
             return response
 
 
-# main routine
-
 # Ask user if they want to enter income or expenses
-income_expenses = not_blank("Would you like to enter an income or an expense? ",
-                            "Please input either <income> or <expense>").lower()
+def which_way():
+    income_expenses = not_blank("Would you like to enter an income or an expense? ",
+                                "Please input either <income> or <expense>").lower()
 
-if income_expenses == "income":
-    print("You chose {}.".format(income_expenses))
+    if income_expenses == "income":
+        print("You chose {}.".format(income_expenses))
 
-elif income_expenses == "expense":
-    print("You chose {}.".format(income_expenses))
+    elif income_expenses == "expense":
+        print("You chose {}.".format(income_expenses))
 
-else:
-    print("Please enter <income> or <expense>")
-    
+    else:
+        print("Please enter <income> or <expense>")
+
+
+    return income_expenses
+
+# main routine
+what_income_expenses = which_way()
